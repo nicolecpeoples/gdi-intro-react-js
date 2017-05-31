@@ -1,49 +1,50 @@
-> Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Then, delete this banner and add the specifics about your class below.
+# Introduction to React.js
 
-# Add Your Course Title Here
-
-Slides and materials are hosted at [http://github.io/your_username_here/your_repository_name_here](http://github.io/your_username_here/your_repository_name_here).
+Slides and materials are hosted at [https://github.com/arilaen/intro-to-react-js](https://github.com/arilaen/intro-to-react-js).
 
 ## Course description
 
-Use this space for a short description of your course. We recommend using the description from your meetup event.
+React is a popular front-end JavaScript framework. Companies like Facebook, Airbnb, Netflix, Paypal, and Dropbox use React to power their blazing-fast, high-traffic websites. React stands out because of its speed, flexibility, and ease of development.
 
-**Cost:** 
+This series will introduce you to React through hands-on exercises and give you the skills needed to integrate it into your own project.
 
-**Dates:** 
+**Cost:** $90
 
-**Location:** 
+**Dates:**
 
-A limited number of scholarships are available for those with a financial hardship. To apply, contact us at...
+Monday, June 5, 6:30-8:30 PM
 
+Monday, June 12, 6:30-8:30 PM
+
+Monday, June 19, 6:30-8:30 PM
+
+Monday, June 26, 6:30-8:30 PM
+
+**Location:**
+
+District Hall, 75 Northern Ave, Boston, MA
 
 ### Prerequisites:
 
-List any prerequisites for this class, including any previous classes or the equivalent self-study or real-world skills.
-
-You should have:
-
-(a) taken Intro or Intermediate HTML/CSS through Girl Develop It, or
-
-(b) built and managed websites on your own,
-
-**And also:**
-
-(a) taken intro to JavaScript through Girl Develop It, or
-
-(b) be familiar with syntax, arrays, conditionals, for and while loops, event handling, jQuery, AJAX requests, and handling JSON responses.
-
+Understanding of HTML and JavaScript is required. Familiarity with other JavaScript frameworks is helpful, but not required.
 
 ### Tech requirements:
 
- - Your laptop (Mac, PC, or Linux are all okay).
- - A modern web browser - either Chrome or Firefox with Firebug installed.
- - A text editor. We recommend Sublime Text 2 (free; available for Mac, PC, and Linux).
+- Laptop and charger
+
+- A free CodePen account
+
+- A text editor, such as Atom or SublimeText (both available for free)
+
+- Google Chrome with the React Developer Tools extension installed
 
 
 ### Topics covered:
 
- - The topics you plan to cover
- - Written in list form
- - Here's another one
+- Learn when React makes sense to use in a JavaScript project
 
+- Learn how React works and what sets it apart from other JavaScript frameworks through hands-on coding exercises
+
+- Start using the latest and greatest version of JavaScript, ES6 (ECMAScript 6, aka ES2015)
+
+- Build your own React projects
