@@ -54,7 +54,7 @@
 					<h1>Introduction to React.js</h1>
 					<h2>Up and running, and beyond</h2>
 					<p>
-						<small>Found at <a href ="https://github.com/arilaen/intro-to-react-js">github</a>.</small>
+						<small>Found at <a href ="https://github.com/arilaen/gdi-intro-react-js">github</a>.</small>
 					</p>
 					<p>
 						<small>Marcela Rodriguez / <a href="http://twitter.com/arilaen">@arilaen</a></small>
@@ -104,37 +104,80 @@
 					</ol>
 				</section>
 
-				<!-- Examples of basic html based slides -->
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>Prerequisites</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Javascript</li>
+						<li>ES6 (will cover the basics here)</li>
+						<li>HTML/CSS</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
+					<h2>Recommended Resources</h2>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+						<li><a href="https://facebook.github.io/react/">React Docs</a></li>
+						<li><a href="https://www.codecademy.com/learn/react-101">Codecademy courses</a></li>
+						<li><a href="https://www.codeschool.com/courses/powering-up-with-react">Codeschool course</a></li>
+						<li><a href="https://egghead.io/courses/start-using-react-to-build-web-applications">Egghead: Start Using React to Build Web Applications</a></li>
+						<li><a href="https://github.com/bmorelli25/Become-A-Full-Stack-Web-Developer/#learn-react-js">And many more here</a></li>
 					</ol>
 				</section>
 
-				<!-- Examples of code slides-->
 				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>For HTML -- Surround your code pre, then code class "xml".</p>
-<pre><code class="xml">&lt;ul class="demo"&gt;
-  &lt;li&gt;No order here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+					<h2>By the end of today you'll know how to use:</h2>
+					<ol>
+						<li>Components</li>
+						<li>JSX</li>
+						<li>Props</li>
+						<li>State</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>CodePen!</h2>
+					<ol>
+						<li>Create an account</li>
+						<li>Visit <a href="https://codepen.io/arilaen/pen/mwbwqa">Hello World Codepen</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Deconstructing the Hello World code</h2>
+					<h4>1. Generate HTML</h4>
+					<p>Create a function that represents an HTML component's state, and returns HTML in a render method</p>
+					<pre><code class="javascript">
+						class App extends React.Component {
+						  render() {
+						    return (<h1>Hello world!</h1>);
+						  }
+						}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Deconstructing the Hello World code</h2>
+					<h4>2. Add HTML to the page</h4>
+					<p>
+						Update the DOM, using a diff of the virtual DOM. First argument is new HTML, second is the element to insert it in.
+					</p>
+					<pre><code class="javascript">
+						ReactDOM.render(<App />, document.getElementById('root'));
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Homework!</h2>
+					<p>Practice ES6 if it is new to you:</p>
+					<ul>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					<p>Create a todo app in Codepen</p>
+					<p>
+				</section>
+
+				<section>
+					<h2>Advanced resources</h2>
+					<li><a href="https://egghead.io/courses/build-your-first-production-quality-react-app">Build Your First Production Quality React App</a>, <a href="https://egghead.io/courses/getting-started-with-redux">Getting Started with Redux</a>, <a href="https://egghead.io/courses/building-react-applications-with-idiomatic-redux">Building React Applications with Idiomatic Redux</a></li>
 				</section>
 
 				<section>
