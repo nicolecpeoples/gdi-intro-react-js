@@ -95,8 +95,8 @@
 				<section>
 					<h2>You should have:</h2>
 					<ul>
-							<li>A <a href="codepen.io">Codepen account</a></li>
-							<li>A text editor (<a href="atom.io">Atom</a>, <a href="sublimetext.com">Sublime Text</a>)</li>
+							<li>A <a href="https://codepen.io">Codepen account</a></li>
+							<li>A text editor (<a href="https://atom.io">Atom</a>, <a href="https://sublimetext.com">Sublime Text</a>)</li>
 							<li>Google Chrome with <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools</a></li>
 					</ul>
 				</section>
@@ -181,7 +181,7 @@
 						<li>They always implement a render function, which outputs HTML</li>
 					</ul>
 					<pre><code class="javascript">
-		class Header extends React.Component {
+		class Greeting extends React.Component {
 		  render() {}
 		}
 					</code></pre>
@@ -197,7 +197,7 @@
 						<li><em>We'll review all of this later!</em></li>
 					</ul>
 					<pre><code class="javascript">
-		class Header extends React.Component {
+		class Greeting extends React.Component {
 			constructor() {
 				super();
 			}
@@ -232,7 +232,7 @@
 					<h2>What is <strong>JSX</strong>?</h2>
 					<h4>Syntax - Hello World example</h4>
 					<pre><code class="javascript">
-		class Header extends React.Component {
+		class Greeting extends React.Component {
 			constructor() {
 				super();
 			}
@@ -241,11 +241,11 @@
 			}
 		}
 					</code></pre>
-					<p>Now, in another component, we can use the Header component, with the self-closing tag:</p>
+					<p>Now, in another component, we can use the Greeting component, with the self-closing tag:</p>
 					<pre><code class="javascript">
 		class Layout extends React.Component {
 			render() {
-				return (&lt;Header /&gt;);
+				return (&lt;Greeting /&gt;);
 			}
 		}
 				</code></pre>
@@ -256,7 +256,7 @@
 					<h4>Syntax - Using JS in JSX</h4>
 					<p>Javascript can be used in JSX as long as it is surrounded by single curly braces ({}).</p>
 					<pre><code class="javascript">
-		class Header extends React.Component {
+		class Greeting extends React.Component {
 			constructor() {
 				super();
 			}
@@ -287,12 +287,12 @@
 					<p>We use ReactDOM.render to add a component to the VirtualDOM.</p>
 					<p>Whenever the page loads, or data changes after a page load, React creates a new VirtualDOM, and compares it to the old one. It takes the changes between them and applies them to the real DOM. This results in less browser manipulation, and faster performance.
 					<pre><code class="javascript">
-		class Header extends React.Component {
+		class Greeting extends React.Component {
 			render() {
 				return (&lt;div&gt;Hello World!&lt;/div&gt;);
 			}
 		}
-		ReactDOM.render(&lt;Header /&gt;, document.getElementById('header'));
+		ReactDOM.render(&lt;Greeting /&gt;, document.getElementById('Greeting'));
 					</code></pre>
 					<p>The first argument to ReactDOM.render() is the JSX to render, and the second is an element on the page to insert it in (selected with vanilla JS).</p>
 					<p><em>Note that we don't need the constructor method yet, but we'll start using it later.</em></p>
@@ -335,7 +335,7 @@
 				</section>
 
 				<section>
-					<h2><a href="facebook.github.io/react">Official React site!</a></h2>
+					<h2><a href="https://facebook.github.io/react">Official React site!</a></h2>
 					<p>Quick overview, checking out their docs and tutorial</p>
 				</section>
 
@@ -368,7 +368,7 @@
 		class App extends React.Component {
 			render() {
 				const message = 'Hello World!';
-				return (&lt;Header message={message} /&gt;);
+				return (&lt;Greeting message={message} /&gt;);
 			}
 		}
 		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
@@ -394,7 +394,7 @@
 				};
 			}
 			render() {
-				return (&lt;Header message={this.state.message} /&gt;);
+				return (&lt;Greeting message={this.state.message} /&gt;);
 			}
 		}
 		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
@@ -419,7 +419,7 @@
 				};
 			}
 			render() {
-				return (&lt;Header message={this.state.message} changeMessage={this.sayGoodbye} /&gt;);
+				return (&lt;Greeting message={this.state.message} changeMessage={this.sayGoodbye} /&gt;);
 			}
 			sayGoodbye(event) {
 				event.preventDefault();
@@ -518,13 +518,13 @@
 
 				<section>
 					<h2>Homework!</h2>
-					<p>Practice ES6 if it is new to you:</p>
+					<p>1 - Read about ES6 if it is new to you:</p>
 					<ul>
-						<li><a href="https://www.codeschool.com/courses/es2015-the-shape-of-javascript-to-come">On Code School</a></li>
-						<li><a href="https://github.com/ericdouglas/ES6-Learning">Or any of these resources!</a></li>
+						<li><a href="https://www.codeschool.com/courses/es2015-the-shape-of-javascript-to-come">Code School ES2015 course (first lesson is free)</a></li>
+						<li><a href="https://cantina.co/embracing-es6-part1/">Embracing Change By Using New ES6 Features (Cantina blog post)</a></li>
+						<li><a href="https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582">Use ECMAScript 6 Today</a></li>
 					</ul>
-					<p>Browse the <a href="https://facebook.github.io/react/">official React site</a>, complete the <a href="https://facebook.github.io/react/tutorial/tutorial.html">tutorial</a></p>
-					<p>Create a todo app in Codepen</p>
+					<p>2 - Browse the <a href="https://facebook.github.io/react/">official React site</a> and complete the <a href="https://facebook.github.io/react/tutorial/tutorial.html">tutorial</a>.</p>
 				</section>
 
 				<section>
