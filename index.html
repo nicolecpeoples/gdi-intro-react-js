@@ -540,6 +540,204 @@
 				</section>
 
 				<section>
+					<h2>Day 2!</h2>
+					<ul>
+						<li>Recap of Day 1: ES6, Props/State</li>
+						<li>Forms</li>
+						<li>AJAX calls</li>
+						<li>Recreating Twitter</li>
+				</section>
+
+				<section>
+					https://babeljs.io/repl/
+				</section>
+
+				<section>
+					<h2>Day 1 Review</h2>
+					<ul>
+						<li>Pros/cons of React</li>
+						<li>Classes + Components</li>
+						<li>Props</li>
+						<li>State</li>
+						<li>setState</li>
+				</section>
+
+				<section>
+					<h2>Pros and cons of React</h2>
+					<ul>
+						<li>Fast</li>
+						<li>Declarative - Easy to understand and maintain at scale (why?)</li>
+						<li>Flexible</li>
+						<li>Cross-platform mobile development (React Native)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Classes + Components</h2>
+					<ul>
+						<li>Classes: ES6 addition, allows object oriented programming (with JS functions behind the scenes)</li>
+						<li>Components: building blocks of React</li>
+						<li>Your components extend React.Component</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Props</h2>
+					<ul>
+						<li>Attributes passed down from one component to another</li>
+						<li>A component's props can be accessed through this.props in the render function</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>State</h2>
+					<ul>
+						<li>Data stored in parent component, passed down to child components through props</li>
+						<li>Initialized in the constructor function</li>
+						<li>Updated with this.setState (this.state and this.props are immutable)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why is immutability important?</h2>
+					<ul>
+						<li>Makes it easier to keep track of changes, test, and use time travel!</li>
+						<li>Thus we use <strong>this.setState</strong> instead of <strong>this.state = ...</strong></li>
+						<li>Helpful methods for copying data, Array.slice, Array.concat, and Object.assign</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Homework review + practice!</h2>
+					<ul>
+						<li>Walkthrough of <a href="https://facebook.github.io/react/tutorial/tutorial.html">official React tutorial</a></li>
+						<li><a href="https://codepen.io/gaearon/pen/gWWZgR">Final result (official)</li>
+						<li><a href="https://codepen.io/gaearon/pen/gWWZgR">My final result (will demo here)</a></li>
+						<li>setState</li>
+				</section>
+
+				<section>
+					<h2>Today's topics!</h2>
+					<ul>
+						<li>Lifecycle hooks</li>
+						<li>Functional Components</li>
+						<li>Composition vs Inheritance</li>
+						<li>Forms (Controlled and uncontrolled components)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Lifecycle hooks</h2>
+					<ul>
+						<li><a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">Docs</a></li>
+						<li><strong>componentWillMount</strong>: Function called before component is rendered. This is the most commonly used lifecycle hook (AJAX calls, timers)</li>
+						<li><strong>componentDidMount</strong>: Function called after component is rendered. Useful for third party integrations if really needed (jQuery plugins)</li>
+						<li><strong>componentWillUnmount</strong>: Function called before component is removed from the DOM</li>
+						<li><strong>componentDidUnmount</strong>: Function called after removal from DOM. Useful for cleanup (removing timers, etc.)</li>
+						<li><a href="https://codepen.io/gaearon/pen/vXdGmd">Official codepen</a></li>
+						<li><a href="https://codepen.io/arilaen/pen/OgNobO">My codepen</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Functional Components</h2>
+					<p>For child components where you only need the render function, and do not need to modify the constructor or lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
+					<p><pre><code class="javascript">
+		function Welcome(props) {
+		  return &lt;h1&gt;Hello, {props.name}</h1>;
+		}
+
+		const element = &lt;Welcome name="Sara" /&gt;;
+		ReactDOM.render(
+		  element,
+		  document.getElementById('root')
+		);
+					</code></pre></p>
+					<p><a href="http://codepen.io/gaearon/pen/YGYmEG?editors=0010">Official Codepen</a></p>
+				</section>
+
+				<section>
+					<h2>Composition vs Inheritance</h2>
+					<ul>
+						<li><a href="https://facebook.github.io/react/docs/composition-vs-inheritance.html">Docs</a></li>
+						<li>Components are very flexible - you can even pass in their contents with <strong>props.children</strong>!</li>
+						<li>Components are very flexible - you can even pass in their contents with <strong><a href="https://codepen.io/gaearon/pen/ozqNOV">props.children</a></strong>!</li>
+						<li>You can also pass <a href="https://codepen.io/gaearon/pen/gwZOJp">JSX elements as your own props</a></li>
+						<li>And you can <a href="http://codepen.io/gaearon/pen/kkEaOZ?editors=0010">extend</a> your own <a href="http://codepen.io/gaearon/pen/gwZbYa?editors=0010">components</a>!</li>
+						<li>Composition is always preferred over inheritance in React - make components as reusable as possible!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Forms</h2>
+					<ul>
+						<li><a href="https://facebook.github.io/react/docs/forms.html">Docs</a></li>
+						<li>Controlled Components (recommended!)</li>
+						<li>Uncontrolled Components</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Controlled Components</h2>
+					<ul>
+						<li>Forms have internal state, but controlled components keep React state in sync with form state</li>
+						<li>In practice: <strong>value</strong> for all types of inputs (including initial/default values), and run setState <strong>onChange</strong></li>
+						<li>Examples: <pre><code class="javascript">
+		&lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+		&lt;textarea value={this.state.value} onChange={this.handleChange} /&gt;
+		&lt;select value={this.state.value} onChange={this.handleChange}&gt;
+			  &lt;option value="grapefruit">Grapefruit&lt;/option&gt;...
+		&lt;/select&gt;
+						</code></pre>
+						</li>
+						<li>Official codepen <a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010">1</a> and <a href="https://codepen.io/gaearon/pen/wgedvV?editors=0010">2</a></li>
+						<li>My codepen <a href="https://codepen.io/arilaen/pen/xrVjNR?editors=0010">1</a> and <a href="https://codepen.io/arilaen/pen/OgNZoE?editors=0010">2</a></li>
+						<li><a href="https://facebook.github.io/react/docs/forms.html">(Form Docs)</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Uncontrolled Components</h2>
+					<ul>
+						<li><a href="https://facebook.github.io/react/docs/uncontrolled-components.html">Docs</a></li>
+						<li>Use <strong>refs</strong> to store internal form state, and use setState on submit</li>
+						<li>Use <strong>defaultValue</strong> to set initial values in form elements (input, select, etc.)</li>
+						<li>Usually not recommended if you can use controlled components (or Redux)</li>
+						<li><a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">"Controlled and uncontrolled form inputs in React don't have to be complicated"</a></li>
+						<li><a href="https://codepen.io/gaearon/pen/WooRWa?editors=0010">Official codepen</a></li>
+						<li><a href="https://codepen.io/arilaen/pen/NgNMOE?editors=0010">My codepen</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Practice time!</h2>
+					<ul>
+						<li>We'll creating a todo app, with initial data from http://jsonplaceholder.typicode.com/</li>
+						<li>Follow along <a href="https://codepen.io/arilaen/pen/qjZJBm">here</a> (starting from scratch) or on your own Codepen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Homework</h2>
+					<ul>
+						<li><a href="https://facebook.github.io/react/docs/thinking-in-react.html">Thinking in React</a> exercise</li>
+						<li>and/or: Customize your todo app in codepen</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Make your own React project on your computer with <a href="https://github.com/facebookincubator/create-react-app">CreateReactApp</a></h2>
+					<ul>
+						<li>Abstracts away build system</li>
+						<li>Great for getting started and making personal sites</li>
+						<li>1 - Install npm <a href="https://github.com/creationix/nvm">(I recommend doing this with nvm)</a></li>
+						<li>2 - npm install -g create-react-app</li>
+						<li>3 - create-react-app my-app;cd my-app</li>
+						<li>3 - npm start</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>Advanced resources</h2>
 					<li>Egghead.io: <a href="https://egghead.io/courses/build-your-first-production-quality-react-app">Build Your First Production Quality React App</a>, <a href="https://egghead.io/courses/getting-started-with-redux">Getting Started with Redux</a>, <a href="https://egghead.io/courses/building-react-applications-with-idiomatic-redux">Building React Applications with Idiomatic Redux</a></li>
 				</section>
