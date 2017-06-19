@@ -639,7 +639,7 @@
 					<p>For child components where you only need the render function, and do not need to modify the constructor or lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
 					<p><pre><code class="javascript">
 		function Welcome(props) {
-		  return &lt;h1&gt;Hello, {props.name}</h1>;
+		  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;</h1>;
 		}
 
 		const element = &lt;Welcome name="Sara" /&gt;;
@@ -750,7 +750,7 @@
 					<p>For child components where you only need the render function, and do not need to modify the constructor or lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
 					<p><pre><code class="javascript">
 		function Welcome(props) {
-		  return &lt;h1&gt;Hello, {props.name}</h1>;
+		  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;</h1>;
 		}
 
 		const element = &lt;Welcome name="Sara" /&gt;;
@@ -820,7 +820,9 @@
 						<li>Abstracts away build system</li>
 						<li>Great for getting started and making personal sites</li>
 					</ul>
-					<h4>Steps</h4>
+				</section>
+				<section>
+					<h2>Getting started with CreateReactApp</h2>
 					<ul>
 						<li>Install npm <a href="https://github.com/creationix/nvm">(I recommend doing this with nvm)</a></li>
 						<li>npm install -g create-react-app</li>
@@ -845,11 +847,17 @@
 					<h2>For next class:</h2>
 					<p>Start working on your own React project, or brainstorming ideas! Here are some to choose from:
 					<ul>
-						<li>Expand the todo app (recreate Trello? Wunderlist?)</li>
-						<li>Create an album of things (movies, photos, songs, or books), allow the user to vote and/or choose favorites (recreate Netflix?)</li>
-						<li>Create a store, allow user to add items to their cart, add reviews (recreate Amazon?)</li>
-						<li>Display a newsfeed (like Twitter)</li>
+						<li>Expand the todo app <em>(remake Trello?)</em></li>
+						<li>Create an album of things (movies, photos, songs, or books), allow the user to vote and/or choose favorites <em>(recreate Netflix?)</em></li>
+						<li>Create a store, allow user to add items to their cart, add reviews <em>(recreate Amazon?)</em></li>
+						<li>Display a newsfeed <em>(recreate Twitter?)</em></li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Project tips</h2>
+					<p>Remember that you can use <a href="http://jsonplaceholder.typicode.com/">http://jsonplaceholder.typicode.com</a> as a resource for mock data!</p>
+					<p>Or you can get fancy if you want to use Twitter data (<a href="https://dev.twitter.com/rest/public/search">docs for creating Twitter queries</a>)
 					<p>You can try a small project or something that you might expand after class - it's up to you!</p>
 				</section>
 
