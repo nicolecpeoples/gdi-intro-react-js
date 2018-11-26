@@ -24,14 +24,14 @@
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+		if (window.location.search.match(/print-pdf/gi)) {
+  var link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.type = 'text/css'
+  link.href = 'css/print/pdf.css'
+  document.getElementsByTagName('head')[0].appendChild(link)
+}
+</script>
 
 		<!-- If use the PDF print sheet so students can print slides-->
 
@@ -55,7 +55,10 @@
 						<small>Found at <a href ="https://github.com/arilaen/gdi-intro-react-js">github</a>.</small>
 					</p>
 					<p>
-						<small>Marcela Rodriguez / <a href="http://twitter.com/arilaen">@arilaen</a></small>
+						<small>Nicole Cherie Peoples / <a href="http://twitter.com/arilaen">@thepeoplespeeps</a></small>
+					</p>
+					<p>
+						<small>Forked from Marcela Rodriguez <a href ="https://github.com/arilaen/gdi-intro-react-js">github</a>.</small>
 					</p>
 				</section>
         <!-- Compatibility-->
@@ -102,12 +105,12 @@
 				</section>
 
 				<section>
-					<h2>Four Day Agenda</h2>
+					<h2>Four Course Agenda</h2>
 					<ol>
 						<li>Hello World! Components, Props, State, JSX, ES6</li>
 						<li>More ES6, Inline Styles, form basics</li>
 						<li>Best practices, view containers, more on forms</li>
-						<li>Recreate famous sites in two hours, Detour into Flux pattern/Redux/the React of tomorrow</li>
+						<li>Workshop: Recreate famous sites in two hours, Detour into Flux pattern/Redux/the React of tomorrow</li>
 					</ol>
 				</section>
 
@@ -177,11 +180,11 @@
 					<h4>What is a <strong>Component</strong>?</h4>
 					<ul>
 						<li>Components are the building blocks of React</li>
-						<li>They are classes that extend React.Component</li>
+						<li>They are classes that extend Component</li>
 						<li>They always implement a render function, which outputs HTML</li>
 					</ul>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
 		  render() {}
 		}
 					</code></pre>
@@ -191,13 +194,13 @@
 					<h4>What is a <strong>Class</strong>?</h4>
 					<ul>
 						<li>A class is a new Javascript feature, added in ES6 (ECMA2015).</li>
-						<li>It is literally a function with syntatic sugar, that behaves similarly to classes in object-oriented languages (like Java).</li>
-						<li>A class can have a constructor function, which is run on initialization.<li>
+						<li>It is literally a function with syntactic sugar, that behaves similarly to classes in object-oriented languages (like Java).</li>
 						<li>A class can extend another class with the "extends" keyword. If it does so, it's constructor needs to use the word super().</li>
 						<li><em>We'll review all of this later!</em></li>
 					</ul>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
+			// we won't be modifying the constructor much so we won't be seeing this throughout the course.
 			constructor() {
 				super();
 			}
@@ -211,7 +214,7 @@
 					<ul>
 						<li>Think of it as code that looks like HTML, and is <strong>transpiled</strong> into Javascript that generates HTML.</li>
 						<li>(If you're curious about the X, the name is short for Javascript XML.)</li>
-						<li>One (big) benefit is that you can catch more template errors at compile time, rather than on page load<li>
+						<li>One (big) benefit is that you can catch more template errors at compile time, rather than on page load</li>
 						<li>Making smaller, reusable components is also easier, versus other frameworks where a new template file and JS file need to be created for each new component.</li>
 						<li><a href="https://jsx.github.io/">Read more about the benefits here</a></li>
 					</ul>
@@ -224,7 +227,7 @@
 						<li><strong>className</strong> - Instead of writing &lt;li class="red"&gt;, you would write &lt;li className="red"&gt;. This is because class is now a reserved word in Javascript.</li>
 						<li><strong>key</strong> - To optimize list display performance, where lists can be reordered/changed, React asks for a key attribute that points to a unique ID for each list element.</li>
 						<li><strong>Synthetic events</strong> - Some event handlers (onSubmit, onClick) have different names or implementations in different browsers. The HTML created by your code will be browser specific (onSubmit will turn into submit, etc), simplifying cross browser compatibility.</li>
-						<li>And some other exceptions we might get to later!</li>
+						<li>And some other exceptions we w get to later!</li>
 					</ul>
 				</section>
 
@@ -232,10 +235,7 @@
 					<h2>What is <strong>JSX</strong>?</h2>
 					<h4>Syntax - Hello World example</h4>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
-			constructor() {
-				super();
-			}
+		class Greeting extends Component {
 			render() {
 				return (&lt;div&gt;Hello World!&lt;/div&gt;);
 			}
@@ -243,7 +243,7 @@
 					</code></pre>
 					<p>Now, in another component, we can use the Greeting component, with the self-closing tag:</p>
 					<pre><code class="javascript">
-		class Layout extends React.Component {
+		class Layout extends Component {
 			render() {
 				return (&lt;Greeting /&gt;);
 			}
@@ -256,10 +256,8 @@
 					<h4>Syntax - Using JS in JSX</h4>
 					<p>Javascript can be used in JSX as long as it is surrounded by single curly braces ({}).</p>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
-			constructor() {
-				super();
-			}
+		class Greeting extends Component {
+
 			render() {
 				const message = 'Hello World!';
 				return (&lt;div&gt;{message}&lt;/div&gt;);
@@ -287,7 +285,7 @@
 					<p>We use ReactDOM.render to add a component to the VirtualDOM.</p>
 					<p>Whenever the page loads, or data changes after a page load, React creates a new VirtualDOM, and compares it to the old one. It takes the changes between them and applies them to the real DOM. This results in less browser manipulation, and faster performance.
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
 			render() {
 				return (&lt;div&gt;Hello World!&lt;/div&gt;);
 			}
@@ -295,12 +293,11 @@
 		ReactDOM.render(&lt;Greeting /&gt;, document.getElementById('Greeting'));
 					</code></pre>
 					<p>The first argument to ReactDOM.render() is the JSX to render, and the second is an element on the page to insert it in (selected with vanilla JS).</p>
-					<p><em>Note that we don't need the constructor method yet, but we'll start using it later.</em></p>
 				</section>
 
 				<section>
 					<h2>Let's play on CodePen!</h2>
-					<p>Visit <a href="https://codepen.io/arilaen/pen/mwbwqa">Hello World example</a> on Codepen: https://codepen.io/arilaen/pen/mwbwqa
+					<p>Visit <a href="https://codepen.io/arilaen/pen/mwbwqa">Hello World example</a> on Codepen: https://codepen.io/niccipeeps/pen/PxaREY
 					</p>
 				</section>
 
@@ -309,7 +306,7 @@
 					<h4>1. Generate HTML</h4>
 					<p>Create a function that represents an HTML component's state, and returns HTML in a render method</p>
 					<pre><code class="javascript">
-		class App extends React.Component {
+		class App extends Component {
 		  render() {
 		    return (&lt;h1&gt;Hello world!&lt;/h1&gt;);
 		  }
@@ -351,7 +348,7 @@
 				<section>
 					<h2>What are <strong>Props</strong>?</h2>
 					<ul>
-						<li>Props are attributes passed down from one component to another</li>
+						<li>Props (properties) are attributes passed down from one component to another</li>
 						<li>A component's props can be accessed through this.props in the render function</li>
 						<li>A component's props are read-only. HOWEVER! Functions can be passed down as props as well. <em>We'll see why this is important soon.</em></li>
 					</ul>
@@ -360,12 +357,12 @@
 				<section>
 					<h2>Hello World with Props</h2>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
 			render() {
 				return (&lt;div&gt;{this.props.message}&lt;/div&gt;);
 			}
 		}
-		class App extends React.Component {
+		class App extends Component {
 			render() {
 				const message = 'Hello World!';
 				return (&lt;Greeting message={message} /&gt;);
@@ -377,22 +374,19 @@
 
 				<section>
 					<h2>What is <strong>state</strong>?</h2>
+					<p>State is used to store information about the component that can change over time <a href="https://www.reactenlightenment.com/react-state/8.1.html"> What is state? </a>
 					<p>The idea behind React is that your code has everything you need to know to display your views, given a specific state.</p>
 					<p>State is set at the parent component, and then passed down to children as props.</p>
-					<p>A component's initial state is set in the constructor function.</p>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
 			render() {
 				return (&lt;div&gt;{this.props.message}&lt;/div&gt;);
 			}
 		}
-		class App extends React.Component {
-			constructor() {
-				super();
-				this.state = {
-					message: 'Hello World!'
-				};
-			}
+		class App extends Component {
+			state = {
+				message: 'Hello World!'
+			};
 			render() {
 				return (&lt;Greeting message={this.state.message} /&gt;);
 			}
@@ -406,18 +400,15 @@
 					<p>To change a component's state, use this.setState(newState).</p>
 					<p>But how can we do this from child components? Pass FUNCTIONS as props!</p>
 					<pre><code class="javascript">
-		class Greeting extends React.Component {
+		class Greeting extends Component {
 			render() {
 				return (&lt;div onClick={this.props.changeMessage.bind(this)}&gt;{this.props.message}&lt;/div&gt;);
 			}
 		}
-		class App extends React.Component {
-			constructor() {
-				super();
-				this.state = {
-					message: 'Hello World!'
-				};
-			}
+		class App extends Component {
+			state = {
+				message: 'Hello World!'
+			};
 			render() {
 				return (&lt;Greeting message={this.state.message} changeMessage={this.sayGoodbye} /&gt;);
 			}
@@ -429,6 +420,7 @@
 		}
 		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
 					</code></pre>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">mdn</a>
 				</section>
 
 				<section>
@@ -469,16 +461,13 @@
 					<h2>Creating lists with JS's map</h2>
 					<p><em>Reminder: We need to set the <strong>key</strong> attribute in each node in a list of nodes, for optimum React performance.</em></p>
 					<pre><code class="javascript">
-		class App extends React.Component {
-			constructor() {
-				super();
-				this.state = {
-					messages: [
-						{id: 'a', value: 'Good morning'},
-						{id: 'b', value: 'Good evening'},
-						{id: 'c', value: 'Good night'},
-					]
-				};
+		class App extends Component {
+			state = {
+				messages: [
+					{id: 'a', value: 'Good morning'},
+					{id: 'b', value: 'Good evening'},
+					{id: 'c', value: 'Good night'},
+				]
 			}
 			render() {
 				return (
@@ -565,7 +554,7 @@
 					<ul>
 						<li>Classes: ES6 addition, allows object oriented programming (with JS functions behind the scenes)</li>
 						<li>Components: building blocks of React</li>
-						<li>Your components extend React.Component</li>
+						<li>Your components extend Component</li>
 					</ul>
 				</section>
 
@@ -589,7 +578,6 @@
 					<h2>State</h2>
 					<ul>
 						<li>Data stored in parent component, passed down to child components through props</li>
-						<li>Initialized in the constructor function</li>
 						<li>Updated with this.setState (this.state and this.props are immutable)</li>
 					</ul>
 				</section>
@@ -636,7 +624,7 @@
 
 				<section>
 					<h2>Functional Components</h2>
-					<p>For child components where you only need the render function, and do not need to modify the constructor or lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
+					<p>For child components where you only need the render function, and do not need to modify the lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
 					<p><pre><code class="javascript">
 		function Welcome(props) {
 		  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;</h1>;
@@ -747,7 +735,7 @@
 
 				<section>
 					<h2>Functional Components (review)</h2>
-					<p>For child components where you only need the render function, and do not need to modify the constructor or lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
+					<p>For child components where you only need the render function, and do not need to modify the lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
 					<p><pre><code class="javascript">
 		function Welcome(props) {
 		  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;</h1>;
@@ -874,7 +862,7 @@
 			</div>
   		<footer>
         <div class="copyright">
-          Introduction to React.js -- Girl Develop It Boston
+          Introduction to React.js -- Girl Develop It Seattle
         </div>
       </footer>
 		</div>
@@ -884,30 +872,58 @@
 		<script src="dist/js/reveal.min.js"></script>
 
 		<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'dist/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
+  // Optional reveal.js plugins
+  dependencies: [
+    {
+      src: 'dist/js/classList.js',
+      condition: function() {
+        return !document.body.classList
+      },
+    },
+    {
+      src: 'plugin/markdown/marked.js',
+      condition: function() {
+        return !!document.querySelector('[data-markdown]')
+      },
+    },
+    {
+      src: 'plugin/markdown/markdown.js',
+      condition: function() {
+        return !!document.querySelector('[data-markdown]')
+      },
+    },
+    {
+      src: 'plugin/highlight/highlight.js',
+      async: true,
+      condition: function() {
+        return !!document.querySelector('pre code')
+      },
+      callback: function() {
+        hljs.initHighlightingOnLoad()
+      },
+    },
+    { src: 'plugin/zoom-js/zoom.js', async: true },
+    { src: 'plugin/notes/notes.js', async: true },
+    {
+      src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+      async: true,
+      condition: function() {
+        return !!document.body.classList
+      },
+    },
+  ],
+})
+</script>
 
 	</body>
 </html>
