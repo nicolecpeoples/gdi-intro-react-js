@@ -1,6 +1,6 @@
 # Introduction to React.js
 
-Slides and materials are hosted at [https://github.com/arilaen/intro-to-react-js](https://github.com/arilaen/gdi-intro-react-js).
+Slides and materials are hosted at [https://github.com/nicolecpeoples/gdi-intro-react-js](https://github.com/nicolecpeoples/gdi-intro-react-js).
 
 ## Course description
 

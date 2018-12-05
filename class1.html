@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>GDI Slides Template - The GDI HTML Presentation Framework</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor <link rel="stylesheet" href="dist/css/light.css">-->
+    <!-- dark editor --><link rel="stylesheet" href="dist/css/dark.css">
+    <!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.type = 'text/css'
+        link.href = 'css/print/pdf.css'
+        document.getElementsByTagName('head')[0].appendChild(link)
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+    <div class="slides">
+        <!-- Opening -->
+        <section>
+            <img src="dist/img/circle-gdi-logo.png" alt="GDI Logo" class="noborder"/>
+            <h1>Introduction to React.js</h1>
+            <h2>Up and running, and beyond</h2>
+            <p>
+                <small>Found at <a href ="https://github.com/arilaen/gdi-intro-react-js">github</a>.</small>
+            </p>
+            <p>
+                <small>Nicole Cherie Peoples / <a href="http://twitter.com/thepeoplespeeps">@thepeoplespeeps</a></small>
+            </p>
+            <p>
+                <small>Forked from Marcela Rodriguez <a href ="https://github.com/arilaen/gdi-intro-react-js">github</a>.</small>
+            </p>
+        </section>
+        <!-- Compatibility-->
+        <section>
+            <h2>Heads Up</h2>
+            <p>
+                Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+            <p class="green">Some "rules"</p>
+            <ul>
+                <li>We are here for you!</li>
+                <li>Every question is important</li>
+                <li>Help each other</li>
+                <li>Have fun</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Introductions</h2>
+            <h3>Tell us about yourself.</h3>
+            <p>Which of your web projects are you most proud of?</p>
+            <ul>
+                <li>Who are you?</li>
+                <li>What do you hope to get out of the class?</li>
+                <li>If you could make any website, what would it be?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Prerequisites</h2>
+            <ul>
+                <li>Javascript</li>
+                <li>ES6 (will cover the basics here)</li>
+                <li>HTML/CSS</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>You should have:</h2>
+            <ul>
+                <li>A <a href="https://codepen.io">Codepen account</a></li>
+                <li>A text editor (<a href="https://atom.io">Atom</a>, <a href="https://sublimetext.com">Sublime Text</a>)</li>
+                <li>Google Chrome with <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Four Course Agenda</h2>
+            <ol>
+                <li>Hello World! Components, Props, State, JSX, ES6</li>
+                <li>More ES6, Inline Styles, form basics</li>
+                <li>Best practices, view containers, more on forms</li>
+                <li>Workshop: Recreate famous sites in two hours, Detour into Flux pattern/Redux/the React of tomorrow</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Recommended Resources</h2>
+            <ul>
+                <li><a href="https://facebook.github.io/react/">React Docs</a></li>
+                <li><a href="https://www.codecademy.com/learn/react-101">Codecademy courses</a></li>
+                <li><a href="https://www.codeschool.com/courses/powering-up-with-react">Codeschool course</a></li>
+                <li><a href="https://egghead.io/courses/start-using-react-to-build-web-applications">Egghead: Start Using React to Build Web Applications</a></li>
+                <li><a href="https://github.com/bmorelli25/Become-A-Full-Stack-Web-Developer/#learn-react-js">And many more here</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>By the end of day 1 you'll know how to use:</h2>
+            <ul>
+                <li>Components</li>
+                <li>JSX</li>
+                <li>Props</li>
+                <li>State + setState</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What is React?</h2>
+            <ul>
+                <li>The V in MVC</li>
+                <li>Developed by Facebook and open-sourced</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Why use React?</h2>
+            <ul>
+                <li>Fast</li>
+                <li>Declarative</li>
+                <li>Easy to understand and maintain at scale</li>
+                <li>Flexibility - can be used with your favorite logic/routing libraries. (But React router is great)</li>
+                <li>In fact, it's so flexible that it can be used on the server side as well as the client side (for isomorphic apps)!</li>
+                <li>And of course it can be used for cross-platform mobile development with React Native</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Should I use React?</h2>
+            <ul>
+                <li>Great for dynamic sites with lots of data</li>
+                <li>Also great if you want to use vanilla JS and ES6, rather than learn a new DSL (domain specific language)</li>
+                <li>May be overkill for very small, static sites, since it requires more explicit code than other frameworks</li>
+                <li>Some people prefer to keep JS and HTML separate (and prefer Vue or AngularJS) - but don't knock JSX until you've tried it!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Some vocab to get started</h2>
+            <ul>
+                <li>Component</li>
+                <li>Class</li>
+                <li>JSX</li>
+                <li>Transpiling</li>
+                <li>Virtual DOM</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>What is a <strong>Component</strong>?</h4>
+            <ul>
+                <li>Components are the building blocks of React</li>
+                <li>They are classes that extend Component</li>
+                <li>They always implement a render function, which outputs HTML</li>
+            </ul>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+		  render() {}
+		}
+					</code></pre>
+        </section>
+
+        <section>
+            <h4>What is a <strong>Class</strong>?</h4>
+            <ul>
+                <li>A class is a new Javascript feature, added in ES6 (ECMA2015).</li>
+                <li>It is literally a function with syntactic sugar, that behaves similarly to classes in object-oriented languages (like Java).</li>
+                <li>A class can extend another class with the "extends" keyword. If it does so, it's constructor needs to use the word super().</li>
+                <li><em>We'll review all of this later!</em></li>
+            </ul>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			// we won't be modifying the constructor much so we won't be seeing this throughout the course.
+			constructor() {
+				super();
+			}
+		}
+					</code></pre>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">MDN docs</a></p>
+        </section>
+
+        <section>
+            <h2>What is <strong>JSX</strong>?</h2>
+            <ul>
+                <li>Think of it as code that looks like HTML, and is <strong>transpiled</strong> into Javascript that generates HTML.</li>
+                <li>(If you're curious about the X, the name is short for Javascript XML.)</li>
+                <li>One (big) benefit is that you can catch more template errors at compile time, rather than on page load</li>
+                <li>Making smaller, reusable components is also easier, versus other frameworks where a new template file and JS file need to be created for each new component.</li>
+                <li><a href="https://jsx.github.io/">Read more about the benefits here</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What is <strong>JSX</strong>?</h2>
+            <ul>
+                <li>Almost fully identical in appearance to HTML - except:</li>
+                <li><strong>className</strong> - Instead of writing &lt;li class="red"&gt;, you would write &lt;li className="red"&gt;. This is because class is now a reserved word in Javascript.</li>
+                <li><strong>key</strong> - To optimize list display performance, where lists can be reordered/changed, React asks for a key attribute that points to a unique ID for each list element.</li>
+                <li><strong>Synthetic events</strong> - Some event handlers (onSubmit, onClick) have different names or implementations in different browsers. The HTML created by your code will be browser specific (onSubmit will turn into submit, etc), simplifying cross browser compatibility.</li>
+                <li>And some other exceptions we w get to later!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What is <strong>JSX</strong>?</h2>
+            <h4>Syntax - Hello World example</h4>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			render() {
+				return (&lt;div&gt;Hello World!&lt;/div&gt;);
+			}
+		}
+					</code></pre>
+            <p>Now, in another component, we can use the Greeting component, with the self-closing tag:</p>
+            <pre><code class="javascript">
+		class Layout extends Component {
+			render() {
+				return (&lt;Greeting /&gt;);
+			}
+		}
+				</code></pre>
+        </section>
+
+        <section>
+            <h2>What is <strong>JSX</strong>?</h2>
+            <h4>Syntax - Using JS in JSX</h4>
+            <p>Javascript can be used in JSX as long as it is surrounded by single curly braces ({}).</p>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+
+			render() {
+				const message = 'Hello World!';
+				return (&lt;div&gt;{message}&lt;/div&gt;);
+			}
+		}
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>What are <strong>transpiling</strong> and <strong>compiling</strong>?</h2>
+            <p>Transpilation is the process of turning Javascript that cannot be understood by the browser (ES6, JSX) into the Javascript understood by browsers today (ES5).<p>
+            <p>It is usually done with <a href="https://babeljs.io">BabelJS</a>.</p>
+            <p>Compilation is the process of turning one language into another, transpiling is compiling between two languages that are similar. So you can use compilation and transpiling interchangably when talking about turning ES6/JSX into Javascript.</p>
+        </section>
+
+        <section>
+            <h2>What is the <strong>Virtual DOM</strong>?</h2>
+            <p>First things first: the browser DOM is an in-memory abstraction of HTML</p>
+            <p><em>DOM stands for <strong>Document Object Model</strong></em></p>
+            <p>Updating the DOM requires browser manipulation, which is slow</p>
+            <p>The virtual DOM is an in-memory representation of the DOM. Updating the virtual DOM does not change the browser, so it is much faster.</p>
+        </section>
+        <section>
+            <h2>What is the <strong>Virtual DOM</strong>?</h2>
+            <p>We use ReactDOM.render to add a component to the VirtualDOM.</p>
+            <p>Whenever the page loads, or data changes after a page load, React creates a new VirtualDOM, and compares it to the old one. It takes the changes between them and applies them to the real DOM. This results in less browser manipulation, and faster performance.
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			render() {
+				return (&lt;div&gt;Hello World!&lt;/div&gt;);
+			}
+		}
+		ReactDOM.render(&lt;Greeting /&gt;, document.getElementById('Greeting'));
+					</code></pre>
+            <p>The first argument to ReactDOM.render() is the JSX to render, and the second is an element on the page to insert it in (selected with vanilla JS).</p>
+        </section>
+
+        <section>
+            <h2>Let's play on CodePen!</h2>
+            <p>Visit <a href="https://codepen.io/arilaen/pen/mwbwqa">Hello World example</a> on Codepen: https://codepen.io/niccipeeps/pen/PxaREY
+            </p>
+        </section>
+
+        <section>
+            <h2>Deconstructing the Hello World code</h2>
+            <h4>1. Generate HTML</h4>
+            <p>Create a function that represents an HTML component's state, and returns HTML in a render method</p>
+            <pre><code class="javascript">
+		class App extends Component {
+		  render() {
+		    return (&lt;h1&gt;Hello world!&lt;/h1&gt;);
+		  }
+		}
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>Deconstructing the Hello World code</h2>
+            <h4>2. Add HTML to the page</h4>
+            <p>
+                Update the DOM, using a diff of the virtual DOM. First argument is new HTML, second is the element to insert it in.
+            </p>
+            <pre><code class="javascript">
+		ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>How to make your own React Hello World Codepen</h2>
+            <p>Demo: will demonstrate how to use Babel and add React and ReactDOM to a new CodePen.</p>
+            <p>Make sure you've created an account so you can create your own as well!</p>
+        </section>
+
+        <section>
+            <h2><a href="https://facebook.github.io/react">Official React site!</a></h2>
+            <p>Quick overview, checking out their docs and tutorial</p>
+        </section>
+
+        <section>
+            <h2>Some more vocab!</h2>
+            <ul>
+                <li>Props</li>
+                <li>State</li>
+                <li>setState</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What are <strong>Props</strong>?</h2>
+            <ul>
+                <li>Props (properties) are attributes passed down from one component to another</li>
+                <li>A component's props can be accessed through this.props in the render function</li>
+                <li>A component's props are read-only. HOWEVER! Functions can be passed down as props as well. <em>We'll see why this is important soon.</em></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hello World with Props</h2>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			render() {
+				return (&lt;div&gt;{this.props.message}&lt;/div&gt;);
+			}
+		}
+		class App extends Component {
+			render() {
+				const message = 'Hello World!';
+				return (&lt;Greeting message={message} /&gt;);
+			}
+		}
+		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>What is <strong>state</strong>?</h2>
+            <li>State is used to store information about the component that can change over time. <a href="https://www.reactenlightenment.com/react-state/8.1.html"> More? </a></li>
+            <li>The idea behind React is that your code has everything you need to know to display your views, given a specific state.</li>
+            <li>State is set at the parent component, and then passed down to children as props.</li>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			render() {
+				return (&lt;div&gt;{this.props.message}&lt;/div&gt;);
+			}
+		}
+		class App extends Component {
+			state = {
+				message: 'Hello World!'
+			};
+			render() {
+				return (&lt;Greeting message={this.state.message} /&gt;);
+			}
+		}
+		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>What is <strong>setState</strong>?</h2>
+            <p>To change a component's state, use this.setState(newState).</p>
+            <p>But how can we do this from child components? Pass FUNCTIONS as props!</p>
+            <pre><code class="javascript">
+		class Greeting extends Component {
+			render() {
+				return (&lt;div onClick={this.props.changeMessage.bind(this)}&gt;{this.props.message}&lt;/div&gt;);
+			}
+		}
+		class App extends Component {
+			state = {
+				message: 'Hello World!'
+			};
+			render() {
+				return (&lt;Greeting message={this.state.message} changeMessage={this.sayGoodbye} /&gt;);
+			}
+			sayGoodbye(event) {
+				event.preventDefault();
+				this.setState(Object.assign({}, this.state, { message: 'Goodbye' }));
+				// Equivalent to this.setState({ message: 'Goodbye' })
+			}
+		}
+		ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
+					</code></pre>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">mdn</a>
+        </section>
+
+        <section>
+            <h2>Code Breakdown!</h2>
+            <p>Let's go over the last example piece by piece:</p>
+            <ul>
+                <li>We added a sayGoodbye method to the App class, and used it as an event handler in the Greeting class. Event handlers are functions called from onClick, onSubmit, etc.
+                    <pre><code class="javascript">
+		sayGoodbye(event) {
+			event.preventDefault();
+			this.setState({message: 'Goodbye'});
+		}
+						</code></pre></li>
+                <li>Event handlers do not need to be invoked (have parentheses at the end). But when a click happens, the event handler is called with an event as the argument. To prevent side effects (like form submissions from pressing a button in a form), use event.preventDefault() (above).
+                    <pre><code class="javascript">
+		render() {
+			return (&lt;div onClick={this.props.changeMessage.bind(this)}&gt;{this.props.message}&lt;/div&gt;);
+		}
+							</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Object.assign</h2>
+            <p>Object.assign is new to Javascript with ES6. It takes the first object (usually empty) and then updates it with attributes from any following objects, in order. This is a great way to create new objects based on existing ones concisely.</p>
+            <pre><code class="javascript">
+		this.setState(Object.assign({}, this.state, { message: 'Goodbye' }));
+		// Would be especially useful with a large state, with many attributes
+						</code></pre>
+        </section>
+
+        <section>
+            <h2>Let's practice on Codepen!</h2>
+        </section>
+
+        <section>
+            <h2>Creating lists with JS's map</h2>
+            <p><em>Reminder: We need to set the <strong>key</strong> attribute in each node in a list of nodes, for optimum React performance.</em></p>
+            <pre><code class="javascript">
+		class App extends Component {
+			state = {
+				messages: [
+					{id: 'a', value: 'Good morning'},
+					{id: 'b', value: 'Good evening'},
+					{id: 'c', value: 'Good night'},
+				]
+			}
+			render() {
+				return (
+					&lt;div&gt;
+					&lt;span&gt;Greetings!&lt;span&gt;
+					&lt;{this.state.messages.map(message =>
+						(&lt;span key={message.id}&gt;message.value&lt;/span&gt;)
+					)}&gt;
+					&lt;div&gt;
+				);
+			}
+		}
+					</code></pre>
+        </section>
+
+        <section>
+            <h2>For those newer to ES6: What are arrow functions?</h2>
+            <p>Arrow functions are a new, improved syntax for functions</p>
+            <pre><code class="javascript">
+		// Simplified (for when there's on argument and only one call in the function body)
+		this.state.messages.map(message =>
+						(&lt;span key={message.id}&gt;message.value&lt;/span&gt;)
+		);
+		// More common
+		this.state.messages.map((message, index) => {
+			console.log(index);
+			return (&lt;span key={message.id}&gt;message.value&lt;/span&gt;);
+		});
+		// ES5 equivalent
+		this.state.messages.map(function(message) {
+			return (&lt;span key={message.id}&gt;message.value&lt;/span&gt;)
+		});
+					</code></pre>
+            <p>One benefit of using arrow functions is that they do not define their own `this`, so you don't need to use `var that=this` with them anymore. And they are more concise than ES5 functions. Yay!</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Read more about them at the MDN docs.</a></p>
+        </section>
+
+        <section>
+            <h2>Homework!</h2>
+            <ol>
+                <li>Read about ES6 if it is new to you:
+                    <ul>
+                        <li><a href="https://www.codeschool.com/courses/es2015-the-shape-of-javascript-to-come">Code School ES2015 course (first lesson is free)</a></li>
+                        <li><a href="https://cantina.co/embracing-es6-part1/">Embracing Change By Using New ES6 Features (Cantina blog post)</a></li>
+                        <li><a href="https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582">Use ECMAScript 6 Today</a></li>
+                    </ul></li>
+                <li>Browse the <a href="https://facebook.github.io/react/">official React site</a> and complete the <a href="https://facebook.github.io/react/tutorial/tutorial.html">tutorial</a> (at least up to right before "Why Immutability Is Important").</li>
+            </ol>
+        </section>
+
+    </div>
+    <footer>
+        <div class="copyright">
+            Introduction to React.js -- Girl Develop It Seattle
+        </div>
+    </footer>
+</div>
+
+
+<script src="dist/js/head.min.js"></script>
+<script src="dist/js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      {
+        src: 'dist/js/classList.js',
+        condition: function() {
+          return !document.body.classList
+        },
+      },
+      {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]')
+        },
+      },
+      {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]')
+        },
+      },
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code')
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad()
+        },
+      },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true },
+      {
+        src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+        async: true,
+        condition: function() {
+          return !!document.body.classList
+        },
+      },
+    ],
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>GDI Slides Template - The GDI HTML Presentation Framework</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor <link rel="stylesheet" href="dist/css/light.css">-->
+    <!-- dark editor --><link rel="stylesheet" href="dist/css/dark.css">
+    <!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.type = 'text/css'
+        link.href = 'css/print/pdf.css'
+        document.getElementsByTagName('head')[0].appendChild(link)
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+    <div class="slides">
+        <!-- Opening -->
+        <section>
+            <h2>Day 3 Agenda:</h2>
+            <ul>
+                <li>Recap of the basics and homework</li>
+                <li>Create todo app on Codepen + locally</li>
+                <li>CreateReactApp - create the todo app locally!</li>
+                <li>Personal projects</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Day 1 + 2 Review</h2>
+            <ul>
+                <li>Props, State, setState</li>
+                <li>Classes + Components vs. Functional Components</li>
+                <li>Lifecycle hooks</li>
+                <li>Composition vs Inheritance</li>
+                <li>Forms (Controlled and uncontrolled components)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Lifecycle hooks (review)</h2>
+            <ul>
+                <li><a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">Docs</a></li>
+                <li><strong>componentWillMount**</strong>: Function called before component is rendered. This is the most commonly used lifecycle hook (AJAX calls, timers)</li>
+                <li><strong>componentDidMount</strong>: Function called after component is rendered. Useful for third party integrations if really needed (jQuery plugins)</li>
+                <li><strong>componentWillUnmount</strong>: Function called before component is removed from the DOM</li>
+                <li><strong>componentDidUnmount*</strong>: Function called after removal from DOM. Useful for cleanup (removing timers, etc.)</li>
+                <li><a href="https://codepen.io/gaearon/pen/vXdGmd">Official codepen</a></li>
+                <li><a href="https://codepen.io/arilaen/pen/OgNobO">My codepen</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Functional Components (review)</h2>
+            <p>For child components where you only need the render function, and do not need to modify the lifecycle methods, you can write your component more concisely! (<a href="https://facebook.github.io/react/docs/components-and-props.html">Docs</a>)</p>
+            <p><pre><code class="javascript">
+		function Welcome(props) {
+		  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;</h1>;
+		}
+
+		const element = &lt;Welcome name="Sara" /&gt;;
+		ReactDOM.render(
+		  element,
+		  document.getElementById('root')
+		);
+					</code></pre></p>
+            <p><a href="http://codepen.io/gaearon/pen/YGYmEG?editors=0010">Official Codepen</a></p>
+        </section>
+
+        <section>
+            <h2>Composition vs Inheritance (review)</h2>
+            <ul>
+                <li><a href="https://facebook.github.io/react/docs/composition-vs-inheritance.html">Docs</a></li>
+                <li>Components are very flexible - you can even pass in their contents with <strong><a href="https://codepen.io/gaearon/pen/ozqNOV">props.children</a></strong>!</li>
+                <li>You can also pass <a href="https://codepen.io/gaearon/pen/gwZOJp">JSX elements as your own props</a></li>
+                <li>And you can <a href="http://codepen.io/gaearon/pen/kkEaOZ?editors=0010">extend</a> your own <a href="http://codepen.io/gaearon/pen/gwZbYa?editors=0010">components</a>!</li>
+                <li>Composition is always preferred over inheritance in React - make components as reusable as possible!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Controlled Components (review)</h2>
+            <ul>
+                <li>Forms have internal state, but controlled components keep React state in sync with form state</li>
+                <li>In practice: <strong>value</strong> for all types of inputs (including initial/default values), and run setState <strong>onChange</strong></li>
+                <li>Examples: <pre><code class="javascript">
+		&lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+		&lt;textarea value={this.state.value} onChange={this.handleChange} /&gt;
+		&lt;select value={this.state.value} onChange={this.handleChange}&gt;
+			  &lt;option value="grapefruit">Grapefruit&lt;/option&gt;...
+		&lt;/select&gt;
+						</code></pre>
+                </li>
+                <li>Official codepen <a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010">1</a> and <a href="https://codepen.io/gaearon/pen/wgedvV?editors=0010">2</a></li>
+                <li>My codepen <a href="https://codepen.io/arilaen/pen/xrVjNR?editors=0010">1</a> and <a href="https://codepen.io/arilaen/pen/OgNZoE?editors=0010">2</a></li>
+                <li><a href="https://facebook.github.io/react/docs/forms.html">(Form Docs)</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Uncontrolled Components (review)</h2>
+            <ul>
+                <li><a href="https://facebook.github.io/react/docs/uncontrolled-components.html">Docs</a></li>
+                <li>Use <strong>refs</strong> to store internal form state, and use setState on submit</li>
+                <li>Use <strong>defaultValue</strong> to set initial values in form elements (input, select, etc.)</li>
+                <li>Usually not recommended if you can use controlled components (or Redux)</li>
+                <li><a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">"Controlled and uncontrolled form inputs in React don't have to be complicated"</a></li>
+                <li><a href="https://codepen.io/gaearon/pen/WooRWa?editors=0010">Official codepen</a></li>
+                <li><a href="https://codepen.io/arilaen/pen/NgNMOE?editors=0010">My codepen</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Practice time!</h2>
+            <ul>
+                <li>We'll create a todo app, with initial data from <a href="http://jsonplaceholder.typicode.com/">http://jsonplaceholder.typicode.com</a></li>
+                <li>Follow along <a href="https://codepen.io/arilaen/pen/qjZJBm?editors=0110">here</a> (starting from scratch) or on your own Codepen</li>
+                <li>See the finished codepen <a href="https://codepen.io/arilaen/pen/bRgXNG?editors=0110">here</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Make your own React project on your computer with <a href="https://github.com/facebookincubator/create-react-app">CreateReactApp</a></h2>
+            <ul>
+                <li>Abstracts away build system</li>
+                <li>Great for getting started and making personal sites</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Getting started with CreateReactApp</h2>
+            <ul>
+                <li>Install npm <a href="https://github.com/creationix/nvm">(I recommend doing this with nvm)</a></li>
+                <li>npm install -g create-react-app</li>
+                <li>create-react-app my-app;cd my-app</li>
+                <li>npm start</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Practice - create todo app locally!</h2>
+            <p>We'll do this together, and go over some things to know when coding locally, such as:</p>
+            <ul>
+                <li>Using the <strong>import</strong> and <strong>export</strong> statements</li>
+                <li>Adding a dependency (like jQuery)</li>
+                <li>Organizing files</li>
+                <li>Understanding compile and linter errors</li>
+                <li>Working example <a href="https://github.com/arilaen/create-react-app-demo">here on github</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>For next class:</h2>
+            <p>Start working on your own React project, or brainstorming ideas! Here are some to choose from:
+            <ul>
+                <li>Expand the todo app <em>(remake Trello?)</em></li>
+                <li>Create an album of things (movies, photos, songs, or books), allow the user to vote and/or choose favorites <em>(recreate Netflix?)</em></li>
+                <li>Create a store, allow user to add items to their cart, add reviews <em>(recreate Amazon?)</em></li>
+                <li>Display a newsfeed <em>(recreate Twitter?)</em></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Project tips</h2>
+            <p>Remember that you can use <a href="http://jsonplaceholder.typicode.com/">http://jsonplaceholder.typicode.com</a> as a resource for mock data!</p>
+            <p>Or you can get fancy if you want to use Twitter data (<a href="https://dev.twitter.com/rest/public/search">docs for creating Twitter queries</a>)
+            <p>You can try a small project or something that you might expand after class - it's up to you!</p>
+        </section>
+
+        <section>
+            <h2>Advanced resources</h2>
+            <li>Egghead.io: <a href="https://egghead.io/courses/build-your-first-production-quality-react-app">Build Your First Production Quality React App</a>, <a href="https://egghead.io/courses/getting-started-with-redux">Getting Started with Redux</a>, <a href="https://egghead.io/courses/building-react-applications-with-idiomatic-redux">Building React Applications with Idiomatic Redux</a></li>
+        </section>
+
+    </div>
+    <footer>
+        <div class="copyright">
+            Introduction to React.js -- Girl Develop It Seattle
+        </div>
+    </footer>
+</div>
+
+
+<script src="dist/js/head.min.js"></script>
+<script src="dist/js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      {
+        src: 'dist/js/classList.js',
+        condition: function() {
+          return !document.body.classList
+        },
+      },
+      {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]')
+        },
+      },
+      {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]')
+        },
+      },
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code')
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad()
+        },
+      },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true },
+      {
+        src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+        async: true,
+        condition: function() {
+          return !!document.body.classList
+        },
+      },
+    ],
+  })
+</script>
+
+</body>
+</html>
